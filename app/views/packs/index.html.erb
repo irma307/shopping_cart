@@ -1,2 +1,7 @@
-<h1>Packs#index</h1>
-<p>Find me in app/views/packs/index.html.erb</p>
+<h1>Packs and recipes</h1>
+<ul>
+<% @packs.each do |pack| %>
+  <li> <%= link_to pack.name, pack_path(pack) %> <%= link_to 'Edit', edit_pack_path(pack) %> | <%= link_to 'Delete', pack_path(pack), method: :delete %> </li>
+<% end %>
+</ul>
+<%= link_to 'Back', root_path %> | <%= link_to 'Create new pack', new_pack_path %>

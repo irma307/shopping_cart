@@ -1,0 +1,17 @@
+<div>
+  <%= simple_form_for(pack) do |f| %>
+      <%= f.error_notification %>
+      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+        <%= f.input :name %>
+        <%= f.input :description %>
+        <%= f.input :speed %>
+        <%= f.input :difficulty %>
+        <%= f.input :pack_type %>
+        <%= f.button :submit, 'Add', class: "btn btn-primary" %>
+
+    <% end %>
+  </div>
+
+
+

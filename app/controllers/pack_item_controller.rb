@@ -1,0 +1,2 @@
+class PackItemController < ApplicationController
+end

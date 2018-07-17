@@ -1,2 +1,6 @@
-<h1>Items#show</h1>
-<p>Find me in app/views/items/show.html.erb</p>
+<h1><%= @item.section %></h1>
+
+<%= @item.quantity %>
+<%= @item.description %>
+
+<%= link_to 'home', items_path %>

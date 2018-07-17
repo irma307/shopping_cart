@@ -1,2 +1,8 @@
-<h1>Packs#show</h1>
-<p>Find me in app/views/packs/show.html.erb</p>
+<h1><%= @pack.name %></h1>
+
+<%= @pack.pack_type %>
+<%= @pack.speed %>
+<%= @pack.difficulty %>
+<%= @pack.description %>
+
+<%= link_to 'home', packs_path %> | <%= link_to 'Edit', edit_pack_path(@pack) %> | <%= link_to 'Delete', packs_path, method: :delete %>
