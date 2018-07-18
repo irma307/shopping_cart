@@ -3,7 +3,7 @@
 <%= link_to 'Packs', packs_path %>
 
 <% @items.each do |item| %>
-  <p><%= item.name %> <%= link_to 'Edit', edit_item_path(item) %> | <%= link_to 'Delete', item_path(item), method: :delete %> | <%= link_to 'Add to pack', new_item_pack_item_path(item) %></p> | <%= link_to 'Add to cart', item_cart_item_path(item), method: :post %></p>
+  <p><%= item.name %> <%= link_to 'Edit', edit_item_path(item) %> | <%= link_to 'Delete', item_path(item), method: :delete %> | <%= link_to 'Add to pack', new_item_pack_item_path(item) %> | <%= link_to 'Add to cart', item_cart_items_path(item), method: :post %></p>
 <% end %>
 
 <%= link_to 'Add item', new_item_path %>

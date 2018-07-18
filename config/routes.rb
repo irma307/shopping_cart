@@ -5,10 +5,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :items do
     resources :pack_items, only:[ :new, :create, :destroy ]
-  end
-  resources :carts do
     resources :cart_items, only:[ :create, :destroy ]
   end
+  resources :carts
   resources :packs do
     resources :likes, only: [ :create, :destroy ]
     resources :favorites, only: [ :create, :destroy ]

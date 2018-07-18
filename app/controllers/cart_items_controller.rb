@@ -1,8 +1,9 @@
-class CartItemController < ApplicationController
+class CartItemsController < ApplicationController
   def create
-    @cart = Cart.find(params[:cart_id])
-    @cart_item = CartItem.new(cart_item_params)
+    @item = Item.find(params[:item_id])
+    @cart_item = CartItem.new(item: @item, cart: Cart.last)
     @cart_item.save!
+    redirect_to items_path(@item)
   end
 
   def destroy
