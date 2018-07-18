@@ -1,0 +1,11 @@
+<h1> Add <%= @item.name %> to pack</h1>
+<div>
+  <%= simple_form_for [@item, @pack, @pack_item] do |f| %>
+      <%= f.error_notification %>
+      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+        <p>Select a pack or <%= link_to 'Create a new pack', new_pack_path  %></p>
+        <%= f.select :pack_id, Pack.all.map { |i| [i.name, i.id ] } %>
+        <%= f.button :submit, 'Add', class: "btn btn-primary" %>
+
+    <% end %>
+  </div>

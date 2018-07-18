@@ -5,4 +5,11 @@
 <%= @pack.difficulty %>
 <%= @pack.description %>
 
+<h3>Items</h3>
+<ul>
+<% @pack.items.each do |item| %>
+ <li><%= link_to item.name, item_path(item) %></li>
+<% end %>
+</ul>
+
 <%= link_to 'home', packs_path %> | <%= link_to 'Edit', edit_pack_path(@pack) %> | <%= link_to 'Delete', packs_path, method: :delete %>
