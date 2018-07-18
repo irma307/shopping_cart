@@ -12,4 +12,4 @@
 <% end %>
 </ul>
 
-<%= link_to 'home', packs_path %> | <%= link_to 'Edit', edit_pack_path(@pack) %> | <%= link_to 'Delete', packs_path, method: :delete %>
+<%= link_to 'home', packs_path %> | <%= link_to 'Edit', edit_pack_path(@pack) %> | <%= link_to 'Delete', packs_path, method: :delete %> | <%= link_to 'Buy this pack', pack_cart_packs_path(@pack), method: :post %>

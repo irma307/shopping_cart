@@ -9,6 +9,7 @@ class PackItemsController < ApplicationController
     @pack_item = PackItem.new(pack_item_params)
     @pack_item.item = @item
     @pack_item.save!
+    redirect_to items_path
   end
 
   def destroy

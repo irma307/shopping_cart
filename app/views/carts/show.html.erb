@@ -5,3 +5,12 @@
     <li><%= item.name %></li>
   <% end %>
 </ul>
+
+<ul>
+  <% @cart.packs.each do |pack| %>
+   <em><%= pack.name %></em>
+    <% pack.items.each do |item| %>
+      <li><%= item.name %></li>
+    <% end %>
+  <% end %>
+</ul>
