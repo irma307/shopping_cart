@@ -4,7 +4,14 @@ class CartsController < ApplicationController
   end
 
   def show
-    @cart = Cart.find(params[:id])
+    @cart = Cart.find(1)
+    @cart_items = CartItem.where(cart: @cart)
+    @total = 0
+    @items = @cart.items
+    @items.each do |item|
+      @total += item.price
+    end
+    @total
   end
 
   def new

@@ -7,8 +7,10 @@ class CartPacksController < ApplicationController
   end
 
   def destroy
+    @cart = Cart.find(1)
     @cart_pack = CartPack.find(params[:id])
     @cart_pack.destroy
+    redirect_to cart_path(@cart)
   end
 
   private

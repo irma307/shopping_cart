@@ -1,16 +1,30 @@
-<h1>Carts#show</h1>
-<p>Find me in app/views/carts/show.html.erb</p>
-<ul>
-  <% @cart.items.each do |item| %>
-    <li><%= item.name %></li>
-  <% end %>
-</ul>
-
-<ul>
-  <% @cart.packs.each do |pack| %>
-   <em><%= pack.name %></em>
-    <% pack.items.each do |item| %>
-      <li><%= item.name %></li>
+<div class="col-xs-6 col-xs-offset-3">
+  <h1>Mon panier</h1>
+  <ul>
+    <% @cart.items.each do |item| %>
+      <li><%= link_to item.name, item_path(item) %> | <%= item.price %>€
+        <%= link_to item_cart_item_path(item), method: :delete do %>
+          <i class="fas fa-minus-circle"></i>
+        <% end %>
+      </li>
     <% end %>
-  <% end %>
-</ul>
+  </ul>
+
+  <ul>
+    <% @cart.packs.each do |pack| %>
+     <em><%= link_to pack.name, pack_path(pack) %>
+        <% @cart.cart_packs.each do |cart_pack| %>
+          <%= link_to pack_cart_pack_path(pack, cart_pack), method: :delete do %>
+            <i class="fas fa-minus-circle"></i>
+          <% end %>
+
+      <% end %>
+     </em>
+
+
+    <% end %>
+  </ul>
+
+  <p><strong>TOTAL: <%= @total %> € </strong></p>
+  <%= link_to 'Commander', class: "btn btn-primary" %>
+</div>

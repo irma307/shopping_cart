@@ -11,7 +11,11 @@
               <div class="product-img">
                 <div class="card-description keyline text-center">
                 <%= image_tag(item.image, class: "image") %>
-                <p><%= link_to item.name, item_path(item) %> | <%=item.price %>€</p>
+                <p><%= link_to item.name, item_path(item) %> | <%=item.price %>€
+                  <%= link_to item_cart_items_path(item), method: :post do %>
+                  <i class="fas fa-plus-circle"></i>
+                  <% end %>
+                </p>
                 </div>
               </div>
             </div>

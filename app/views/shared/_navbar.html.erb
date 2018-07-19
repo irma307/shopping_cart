@@ -12,7 +12,7 @@
       <!-- Links when logged in -->
       <%= link_to "Produits", items_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Packs", packs_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Mon Panier", carts_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Mon Panier", cart_path(1), class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->

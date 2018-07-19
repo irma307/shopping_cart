@@ -6,7 +6,7 @@ class FavoritesController < ApplicationController
   end
 
   def destroy
-    @favorite = favorite.find(params[:id])
+    @favorite = Favorite.find(params[:id])
     @favorite.destroy
     # redirect_to packs_path
   end

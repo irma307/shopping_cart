@@ -1,3 +1,28 @@
+.fa-heart {
+  position: absolute;
+  right: 25px;
+  top: 5px;
+  z-index: 1;
+  color: white;
+}
+
+.fas.fa-heart {
+  font-size: 15px;
+  color: white;
+}
+
+.fas {
+  font-size: 15px;
+  color: $c-gray;
+  a {
+    color: $c-gray;
+  }
+  &:hover {
+    color: $orange;
+    text-decoration: none;
+  }
+}
+
 body {
   background-color: white;
 }

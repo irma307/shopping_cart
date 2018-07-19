@@ -8,9 +8,24 @@
 
           <%= link_to pack_path(pack) do %>
       <div class="col-xs-12 col-sm-4">
+
+        <% if pack.favorites.where(user_id: current_user)[0].blank? || pack.favorites.where(user_id: current_user)[0].nil?%>
+                <%= link_to pack_favorites_path(pack), method: :post do %>
+                  <i class="far fa-heart"></i>
+                <% end %>
+              <% else %>
+                <% hey = pack.favorites.where(user_id: current_user)[0].id %>
+                <%= link_to pack_favorite_path(pack, hey), method: :delete do %>
+                  <i class="fas fa-heart"></i>
+                <% end %>
+              <% end %>
+
             <div class="card"style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path(pack.image) %>);">
               <div class="card-description">
               <%= link_to pack.name, pack_path(pack) %>
+              <%= link_to pack_cart_packs_path(pack), method: :post do %>
+                <i class="fas fa-plus-circle"></i>
+              <% end %>
               </div>
             </div>
 

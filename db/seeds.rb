@@ -28,11 +28,11 @@
 # 'Animaux'
 # 'Non-alimentaire'
 
-# USERS
-# User.create(
-#   email: "irma@irma.com",
-#   encrypted_password: "lewagon"
-#   )
+USERS
+User.create(
+  email: "irma@irma.com",
+  encrypted_password: "lewagon"
+  )
 
 # # ITEMS
 
@@ -320,3 +320,7 @@ Pack.create(
   items: [Item.find_by(name: 'from.crémeux La Brique'), Item.find_by(name: 'toasts melba'), Item.find_by(name: 'Les Hauts Rocs blanc')],
   image: 'https://images.unsplash.com/photo-1520066975094-c321ec00637d?ixlib=rb-0.3.5&s=7335e4200d57596e7e37c325ecac0fbf&auto=format&fit=crop&w=1650&q=80'
   )
+
+#CART
+
+Cart.create(user_id:1)
