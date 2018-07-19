@@ -29,12 +29,12 @@
 # 'Non-alimentaire'
 
 # USERS
-User.create(
-  email: "irma@irma.com",
-  encrypted_password: "lewagon"
-  )
+# User.create(
+#   email: "irma@irma.com",
+#   encrypted_password: "lewagon"
+#   )
 
-# ITEMS
+# # ITEMS
 
 Item.create(
   name: "fromage Fagotin Tradition",
@@ -101,7 +101,7 @@ Item.create(
   )
 
 Item.create(
-  name: 'rhum 40,0'%' vol',
+  name: 'rhum',
   brand: 'HAVANA CLUB 3 AÑOS',
   section: 'Boissons',
   description: 'rhum 40,0'%' vol',
@@ -286,37 +286,34 @@ Item.create(
 
 #PACKS
 
-# Pack.create(
-#   name: "Mojito royal",
-#   description: ,
-#   ingredients: ["4 cl de rhum", "12 cl de vin mousseux", "0.5 citron vert", "1 branche de menthe fraîche", "1 c. à café de sucre de canne", "glace pilée"],
-#   speed: 10,
-#   difficulty: 1,
-#   pack_type: "recipe",
-#   image:
-#   )
+Pack.create(
+  name: "Mojito royal",
+  description: "cocktail rafraichissant",
+  ingredients: ["4 cl de rhum", "12 cl de vin mousseux", "0.5 citron vert", "1 branche de menthe fraîche", "1 c. à café de sucre de canne", "glace pilée"],
+  speed: 10,
+  difficulty: 1,
+  pack_type: "recipe",
+  image: "https://static.colruyt.be/culinair/update_vi1015/Mojito_Royal_MR.jpg",
+  items: [Item.find_by(name: 'menthe fraiche'), Item.find_by(name: 'citron verts'), Item.find_by(name: 'glace pilée'), Item.find_by(name: 's.r.canne'), Item.find_by(name: 'vin mousseux brut'), Item.find_by(name: 'rhum')]
+  )
 
-# Pack.create(
-#   name: "Back to school",
-#   description: 'Tout le nécessaire pour une boone rentrée.',
-#   speed: ,
-#   difficulty: ,
-#   pack_type: "pack",
-#   # items: [Item.find_by(name: 'stylo à bille 4 couleurs')],
-#   )
+Pack.create(
+  name: "Back to school",
+  description: 'Tout le nécessaire pour une boone rentrée.',
+  pack_type: "pack",
+  items: [Item.find_by(name: 'stylo à bille 4 couleurs'), Item.find_by(name: 'cahier A4'), Item.find_by(name: 'bâton de colle 22 g')]
+  )
 
-# Pack.create(
-#   name: "Barbecue",
-#   description: "Tout ce dont vous avez besoin pour un barbecue de 4 personnes",
-#   speed: ,
-#   difficulty: ,
-#   pack_type: "pack",
-#   )
+Pack.create(
+  name: "Barbecue",
+  description: "Tout ce dont vous avez besoin pour un barbecue de 4 personnes",
+  pack_type: "pack",
+  items: [Item.find_by(name: 'Colis barbecue'), Item.find_by(name: 'BBQ sauces'), Item.find_by(name: 'Brochette mixte'), Item.find_by(name: 'minigrenailles'), Item.find_by(name: 'salade mixte extra'), Item.find_by(name: 'tomates cerises')]
+  )
 
-# Pack.create(
-#   name: "Apéro vin fromage",
-#   description: "Tout pour vous faire plaisir cet été !",
-#   speed: ,
-#   difficulty: ,
-#   pack_type: "pack",
-#   )
+Pack.create(
+  name: "Apéro vin fromage",
+  description: "Tout pour vous faire plaisir cet été !",
+  pack_type: "pack",
+  items: [Item.find_by(name: 'from.crémeux La Brique'), Item.find_by(name: 'toasts melba'), Item.find_by(name: 'Les Hauts Rocs blanc')]
+  )
