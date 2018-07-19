@@ -5,7 +5,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.string :section
       t.text :description
       t.string :image
-      t.integer :quantity
+      t.string :quantity
       t.integer :price
       t.integer :stock
 
