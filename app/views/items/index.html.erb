@@ -1,9 +1,23 @@
-<h1>Items#index</h1>
+<div class="container">
+  <div class="row">
+    <h1>Nos produits</strong></h1>
 
-<%= link_to 'Packs', packs_path %>
+      <!-- insert <div class="card"> -->
+    <% @items.each do |item| %>
 
-<% @items.each do |item| %>
-  <p><%= item.name %> <%= link_to 'Edit', edit_item_path(item) %> | <%= link_to 'Delete', item_path(item), method: :delete %> | <%= link_to 'Add to pack', new_item_pack_item_path(item) %> | <%= link_to 'Add to cart', item_cart_items_path(item), method: :post %></p>
-<% end %>
+          <%= link_to item_path(item) do %>
+      <div class="col-xs-12 col-sm-4 col-md-3">
+            <div class="card keyline">
+              <div class="product-img">
+                <div class="card-description keyline text-center">
+                <%= image_tag(item.image, class: "image") %>
+                <p><%= link_to item.name, item_path(item) %> | <%=item.price %>€</p>
+                </div>
+              </div>
+            </div>
+        </div>
+          <% end %>
+    <% end %>
 
-<%= link_to 'Add item', new_item_path %>
+  </div>
+</div>

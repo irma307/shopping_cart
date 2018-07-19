@@ -1,6 +1,12 @@
-<h1><%= @item.section %></h1>
 
-<%= @item.quantity %>
-<%= @item.description %>
+<div class="col-xs-6 col-xs-offset-3">
+  <h1><%= @item.name %></h1>
+  <h6><%= @item.section %></h6>
 
-<%= link_to 'home', items_path %>
+  <%= image_tag(@item.image, width: "200") %>
+  <p></p>
+  <p> <%= @item.description %></p>
+
+  <%= link_to 'home', items_path, class: "btn btn-primary" %>  <%= link_to 'Edit', edit_item_path(@item), class: "btn btn-primary" %>  <%= link_to 'Effacer', items_path, method: :delete, class: "btn btn-primary" %> <%= link_to 'Acheter', item_cart_items_path(@item), method: :post, class: "btn btn-primary" %>
+</div>
+

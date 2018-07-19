@@ -1,7 +1,26 @@
-<h1>Packs and recipes</h1>
-<ul>
-<% @packs.each do |pack| %>
-  <li> <%= link_to pack.name, pack_path(pack) %> <%= link_to 'Edit', edit_pack_path(pack) %> | <%= link_to 'Delete', pack_path(pack), method: :delete %> </li>
-<% end %>
-</ul>
-<%= link_to 'Back', root_path %> | <%= link_to 'Create new pack', new_pack_path %>
+<h1>Packs et recettes</h1>
+
+<div class="container">
+  <div class="row">
+
+      <!-- insert <div class="card"> -->
+    <% @packs.each do |pack| %>
+
+          <%= link_to pack_path(pack) do %>
+      <div class="col-xs-12 col-sm-4">
+            <div class="card"style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path(pack.image) %>);">
+              <div class="card-description">
+              <%= link_to pack.name, pack_path(pack) %>
+              </div>
+            </div>
+
+        </div>
+          <% end %>
+    <% end %>
+
+  </div>
+</div>
+
+
+<br>
+<%= link_to 'Retour', root_path, class: "btn btn-primary" %>  <%= link_to 'Nouveau pack', new_pack_path, class: "btn btn-primary" %>

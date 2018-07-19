@@ -301,19 +301,22 @@ Pack.create(
   name: "Back to school",
   description: 'Tout le nécessaire pour une boone rentrée.',
   pack_type: "pack",
-  items: [Item.find_by(name: 'stylo à bille 4 couleurs'), Item.find_by(name: 'cahier A4'), Item.find_by(name: 'bâton de colle 22 g')]
+  items: [Item.find_by(name: 'stylo à bille 4 couleurs'), Item.find_by(name: 'cahier A4'), Item.find_by(name: 'bâton de colle 22 g')],
+  image: 'https://images.unsplash.com/photo-1512253022256-19f4cb92a4dc?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d55bca363cc59e76764b5ebfcecbf54f&auto=format&fit=crop&w=1613&q=80'
   )
 
 Pack.create(
   name: "Barbecue",
   description: "Tout ce dont vous avez besoin pour un barbecue de 4 personnes",
   pack_type: "pack",
-  items: [Item.find_by(name: 'Colis barbecue'), Item.find_by(name: 'BBQ sauces'), Item.find_by(name: 'Brochette mixte'), Item.find_by(name: 'minigrenailles'), Item.find_by(name: 'salade mixte extra'), Item.find_by(name: 'tomates cerises')]
+  items: [Item.find_by(name: 'Colis barbecue'), Item.find_by(name: 'BBQ sauces'), Item.find_by(name: 'Brochette mixte'), Item.find_by(name: 'minigrenailles'), Item.find_by(name: 'salade mixte extra'), Item.find_by(name: 'tomates cerises')],
+  image: 'https://images.unsplash.com/photo-1449453791997-5c0240b106e5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=60c4109688f92e531eaec8ca0f3306de&auto=format&fit=crop&w=1647&q=80'
   )
 
 Pack.create(
   name: "Apéro vin fromage",
   description: "Tout pour vous faire plaisir cet été !",
   pack_type: "pack",
-  items: [Item.find_by(name: 'from.crémeux La Brique'), Item.find_by(name: 'toasts melba'), Item.find_by(name: 'Les Hauts Rocs blanc')]
+  items: [Item.find_by(name: 'from.crémeux La Brique'), Item.find_by(name: 'toasts melba'), Item.find_by(name: 'Les Hauts Rocs blanc')],
+  image: 'https://images.unsplash.com/photo-1520066975094-c321ec00637d?ixlib=rb-0.3.5&s=7335e4200d57596e7e37c325ecac0fbf&auto=format&fit=crop&w=1650&q=80'
   )

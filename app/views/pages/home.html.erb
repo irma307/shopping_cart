@@ -1,2 +1,45 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<%= render 'shared/banner' %>
+<div class="container">
+  <div class="row">
+    <h6><strong>Découvrez nos packs</strong></h6>
+
+      <!-- insert <div class="card"> -->
+    <% @packs.first(3).each do |pack| %>
+
+          <%= link_to pack_path(pack) do %>
+      <div class="col-xs-12 col-sm-4">
+            <div class="card"style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path(pack.image) %>);">
+              <div class="card-description">
+              <%= link_to pack.name, pack_path(pack) %>
+              </div>
+            </div>
+        </div>
+          <% end %>
+    <% end %>
+
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <h6><strong>Nos produits</strong></h6>
+
+      <!-- insert <div class="card"> -->
+    <% @items.first(8).each do |item| %>
+
+          <%= link_to item_path(item) do %>
+      <div class="col-xs-12 col-sm-4 col-md-3">
+            <div class="card keyline">
+              <div class="product-img">
+                <div class="card-description keyline text-center">
+                <%= image_tag(item.image, class: "image") %>
+                <p><%= link_to item.name, item_path(item) %> | <%=item.price %>€</p>
+                </div>
+              </div>
+            </div>
+        </div>
+          <% end %>
+    <% end %>
+
+  </div>
+</div>

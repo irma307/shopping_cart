@@ -1,15 +1,18 @@
-<h1><%= @pack.name %></h1>
+<div class="col-xs-6 col-xs-offset-3">
+  <h1><%= @pack.name %></h1>
 
-<%= @pack.pack_type %>
-<%= @pack.speed %>
-<%= @pack.difficulty %>
-<%= @pack.description %>
+  <%= image_tag(@pack.image, width: "500") %>
+  <p></p>
+  <p> <%= @pack.description %></p>
 
-<h3>Items</h3>
-<ul>
-<% @pack.items.each do |item| %>
- <li><%= link_to item.name, item_path(item) %></li>
-<% end %>
-</ul>
 
-<%= link_to 'home', packs_path %> | <%= link_to 'Edit', edit_pack_path(@pack) %> | <%= link_to 'Delete', packs_path, method: :delete %> | <%= link_to 'Buy this pack', pack_cart_packs_path(@pack), method: :post %>
+  <h4>Ce pack contient:</h4>
+  <ul>
+  <% @pack.items.each do |item| %>
+   <li><%= link_to item.name, item_path(item) %></li>
+  <% end %>
+  </ul>
+
+  <%= link_to 'home', packs_path, class: "btn btn-primary" %>  <%= link_to 'Edit', edit_pack_path(@pack), class: "btn btn-primary" %>  <%= link_to 'Effacer', packs_path, method: :delete, class: "btn btn-primary" %> <%= link_to 'Acheter', pack_cart_packs_path(@pack), method: :post, class: "btn btn-primary" %>
+</div>
+
