@@ -28,11 +28,11 @@
 # 'Animaux'
 # 'Non-alimentaire'
 
-USERS
-User.create(
-  email: "irma@irma.com",
-  encrypted_password: "lewagon"
-  )
+# USERS
+# User.create(
+#   email: "irma@irma.com",
+#   encrypted_password: "lewagon"
+#   )
 
 # # ITEMS
 
