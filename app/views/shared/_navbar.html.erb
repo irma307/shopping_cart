@@ -12,7 +12,14 @@
       <!-- Links when logged in -->
       <%= link_to "Produits", items_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Packs", packs_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Mon Panier", cart_path(Cart.where(user: current_user).last), class: "navbar-wagon-item navbar-wagon-link" %>
+
+      <%  if Cart.where(user: current_user).nil? || Cart.where(user: current_user).blank? %>
+        <%= link_to "Mon Panier", carts_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <% else %>
+        <%= link_to "Mon Panier", cart_path(Cart.where(user: current_user).last), class: "navbar-wagon-item navbar-wagon-link" %>
+      <% end %>
+
+
       <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %>
 
     <% else %>

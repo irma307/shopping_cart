@@ -1,7 +1,15 @@
 class CartPacksController < ApplicationController
   def create
+    if Cart.where(user: current_user).nil? || Cart.where(user: current_user).blank?
+      @cart = Cart.new(user: current_user)
+      @cart.save!
+    else
+      @cart = Cart.where(user: current_user).last
+      @cart.save!
+    end
+
     @pack = Pack.find(params[:pack_id])
-    @cart_pack = CartPack.new(pack: @pack, cart: Cart.last)
+    @cart_pack = CartPack.new(pack: @pack, cart: @cart)
     @cart_pack.save!
     redirect_to pack_path(@pack)
   end

@@ -4,7 +4,7 @@ class CartsController < ApplicationController
   end
 
   def show
-    @cart = Cart.find(1)
+    @cart = Cart.where(user: current_user).last
     @cart_items = CartItem.where(cart: @cart)
     @total = 0
     @items = @cart.items
@@ -19,10 +19,9 @@ class CartsController < ApplicationController
   end
 
   def create
-    @cart = Cart.new(cart_params)
-    @cart.user_id = current_user.id
+    @cart = Cart.new(user: current_user)
     @cart.save!
-    redirect_to cart_path(@cart)
+    redirect_to root_path
   end
 
   def edit
