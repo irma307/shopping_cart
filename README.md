@@ -1,1 +1,3 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+Online shopping simple protype with option of buying packs eg. recipes, 'back to school' or 'barbecue packs'.
+
+When pack is purchased, all items are added to the cart. Customers can then add or remove items if they wish to or proceed with purchasing items.
